@@ -1,0 +1,56 @@
+// // $리스트형 변수:값,값,값;
+// // @each $각각의아이템 in $리스트형변수명{}
+
+// $color: red,blue,orange;
+// // .text-red{
+// //     color: red;
+// // }
+// // .text-blue{
+// //     color: red;
+// // }
+// // .text-red{
+// //     color: red;
+// // }
+
+
+// @each $item in $color{
+//     .text-#{item}{
+//     color:$item;
+//     }
+
+// }
+// // .text-pink{
+// //     color:#fc817c;
+// // }
+// $colorList : pink #fc817c,purple #b174ae;
+// @each $class,$colorValue in $colorList {
+//     .text-#{$class}{
+//         color:$colorValue;
+//     }
+// }
+
+// .btn-emoji{
+// @include background("./dog.jpg", null);
+//     width:50px;
+//     height:50px;
+//     border: none;
+//     cursor: pointer;
+// }
+// .btn-write{
+//     @include background("dog.jpg",null);
+// }
+// $iconButton{
+//     width: 50px;
+//     height:50px;
+//     border:none;
+//     cursor:pointer;
+// }
+
+// $buttonList: ".btn-emoji" "./images/dog.jpg",".btn-write","./images/dog.jpg"
+
+// @each $class, $image in $buttonList {
+//     #{$class} {
+//         @include background($image,null);
+//     }
+
+// }

@@ -1,0 +1,17 @@
+//ctrl+p 누르고 파일 탐색
+//npm i -d sass //sass 연결
+// npm run dev //scss 연결
+
+@import "./abstracts/variables"; //임포트 순서 지키기
+@import "./abstracts/mixin/background"; //변수(variable)이 가장 위에
+@import "./abstracts/mixin/responsive"; // 그 다음은 mixin
+@import "./abstracts/mixin/button";
+@import "./abstracts/mixin/radio";
+@import "./abstracts/mixin/select";
+@import "./abstracts/mixin/position";
+@import "./abstracts/mixin/avatar";
+@import "./base/reset";
+@import "./components/typography";
+@import "./components/form";
+@import "./components/button";
+@import "./layout/space";

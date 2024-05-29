@@ -1,0 +1,4 @@
+.btn {
+  @include buttonColor("red");
+  @include buttonSize("sm");
+}

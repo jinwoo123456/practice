@@ -1,0 +1,27 @@
+@for $index from 1 through 5 {
+    .box {
+        left: $index + px;
+    }
+}
+
+
+.icon-list{
+    list-style: none;
+    display: flex;
+    gap:1px;
+    li{
+        width: 150px;
+        height: 250px;
+        border: 1px solid silver;
+    }
+    .ico1{
+        @include background("ico1.svg",null);
+    }
+    @for $index from 1 through 4 {
+        .ico#{$index}{
+            @include background("icon#{$index}.svg",null);
+            &:hover{
+                @include background("icon#{index}_on.svg",null);
+            }}
+            }
+}

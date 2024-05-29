@@ -1,0 +1,122 @@
+
+
+ @mixin avatar($size,$circle:false){
+   width: $size;
+   height: $size;
+    object-fit: cover;
+   border: 2px solid #000;
+   @if $circle{
+   border-radius: 100%;}
+}
+.avatar{
+    &.circle{
+        @include avatar(80px,true);
+    }
+   &.square{ @include avatar(80px);
+   }}
+
+$light-border : #999;
+$light-bg : #fff;
+$light-text: gray;
+$dark-border : #fff;
+$dark-bg : #000;
+$dark-text: #fff;
+@mixin themeBtn($theme){
+    @if $theme{
+        //true : light theme
+        border: 1px solid $light-border;
+        background: $light-bg;
+        color: $light-text;
+    }
+    @else{
+        //false : dark theme
+        border: 1px solid $dark-border;
+        background: $dark-bg;
+        color: $dark-text;
+    
+    }
+}
+.btn-theme{
+    cursor: pointer;
+    width: 120px;
+    height: 48px;
+    border-radius: 48px;
+    @include themeBtn(true);
+    .dark & {
+        @include themeBtn(
+            false
+        );
+    }
+}
+
+
+@mixin position($xValue, $yValue) {
+    position: absolute;
+    left:$xValue;
+    top:$yValue;
+    @if $xValue ==50% and $yValue == 50%{
+        transform: translate(-50%,-50%);
+    }
+    @else if $xValue == 50% {
+        transform: translate(-50%);
+    }@else if $yValue == 50%{
+        transform: translateY(-50%);
+    }
+}
+.popup{
+    @include position(50%, 50%);
+    width: 300px;
+    height: 200px;
+    border: 2px solid red;
+    background-color: #fff;
+}
+// .popup{
+//     width: 300px;
+//     height: 200px;
+//     border:2px solid red;
+//     background-color: #fff;;
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%,-50%);
+    
+// }
+
+// @mixin avatar-circle ($size){
+//     width: $size;
+//     height: $size;
+//     object-fit: cover;
+//     border: 2px solid #000;
+//     border-radius: 100%;
+
+// }
+// @mixin avatar-square ($size){
+//     width: $size;
+//     height: $size;
+//     object-fit: cover;
+//     border: 2px solid #000;
+    
+
+// }
+// .avatar{
+//     &.circle{
+//     @include avatar-circle(80px);
+//     }
+//     &.square{
+//         @include avatar-square(80px);
+//     }
+// }
+
+// .avatar{
+//     width: 80px;
+//     height: 80px;
+//     border-radius: 100%;
+//     object-fit: cover;
+//     border: 2px solid #000;
+//     &.circle{
+//         border-radius: 100%;
+//     }
+//     &.square{
+//         border-radius: 0;
+//     }
+// }
