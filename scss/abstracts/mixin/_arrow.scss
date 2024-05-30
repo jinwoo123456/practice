@@ -1,0 +1,20 @@
+@mixin arrow($base) {
+  width: 14px;
+  height: 8px;
+  background-color: transparent;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  transition: rotate($base);
+  @if $class {
+    transform: rotate(map-get($base));
+  }
+}
+
+// .arrow {
+//   width: 14px;
+//   height: 8px;
+//   background-color: transparent;
+//   border-left: 1px solid black;
+//   border-right: 1px solid black;
+//   transition: rotate(45deg);
+// }

@@ -9,3 +9,17 @@ $heading: base #000 45px 300, sm #000 35px 300;
     font-weight: $fontWeight;
   }
 }
+
+$fontsize: lg map-get($fontsize, lg), m map-get($fontsize, m), sm map-get($fontsize, sm);
+@each $class in $fontsize {
+}
+
+// .sm {
+//   font-size: map-get($fontsize, sm);
+// }
+// .m {
+//   font-size: map-get($fontsize, m);
+// }
+// .lg {
+//   font-size: map-get($fontsize, lg);
+// }

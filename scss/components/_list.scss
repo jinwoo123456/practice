@@ -1,0 +1,12 @@
+.menu {
+  &::after {
+    @include arrow;
+    visibility: hidden;
+  }
+  &:hover {
+    visibility: visible;
+    @if;
+  }
+}
+
+$div: ".submenu";
